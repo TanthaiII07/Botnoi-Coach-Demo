@@ -17,7 +17,7 @@ function App() {
       <main className="hero-container">
         <h1 className="hero-title">
           <span className="hero-gradient-text">
-            UNLOCK
+            Test
           </span>
           <br />
           <span className="hero-white-text">YOUR CAREER POTENTIAL</span>
