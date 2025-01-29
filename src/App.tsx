@@ -1,8 +1,12 @@
 import React from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Bot, ArrowRight } from 'lucide-react';
+import Login from './pages/Login';
 import './styles/App.css';
 
-function App() {
+function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="main-layout">
       {/* Navigation */}
@@ -28,7 +32,10 @@ function App() {
         </p>
 
         <div className="hero-buttons">
-          <button className="primary-button">
+          <button 
+            className="primary-button"
+            onClick={() => navigate('/login')}
+          >
             Get started <ArrowRight className="w-5 h-5" />
           </button>
           <a href="#about" className="secondary-link">
@@ -37,6 +44,15 @@ function App() {
         </div>
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 
